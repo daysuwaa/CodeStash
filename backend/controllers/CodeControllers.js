@@ -1,8 +1,7 @@
 const CodeModel = require("../models/CodeModel");
 
-module.exports.getCodeModel = async (req, res) => {
-  //   const codes = await CodeModel.find()
-  //   res.send(codes);
+const getCode = async (req, res) => {
+  res.send("hiiii")
+}
+module.exports = { getCode, };
 
-  res.send("Hiiii");
-};
