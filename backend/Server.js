@@ -1,11 +1,9 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable no-undef */
 const express = require("express");
 const mongoose = require("mongoose");
 
 require("dotenv").config();
 
-const coderoutes = require("./routes/Coderoute");
+const codeRoute = require("./routes/Coderoute");
 const stashedroutes = require("./routes/Stashedroute");
 
 const cors = require("cors");
@@ -27,6 +25,6 @@ mongoose
     process.exit(1); // Exit the process if unable to connect to MongoDB
   });
 
-// app.use("/coderoutes", coderoutes);
+app.use("/coderoutes", codeRoute.router);
 // app.use("/stashedroutes", stashedroutes);
 app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
