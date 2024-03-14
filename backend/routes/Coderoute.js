@@ -1,9 +1,18 @@
-// /* eslint-disable no-undef */
+/* eslint-disable no-undef */
 const { Router } = require("express");
-const CodeController = require("../controllers/CodeControllers");
-const router = Router();
-router.get("/get", CodeController.getCode);
+const router = Router(); // Create a new router instance
 
+const {
+  getCode,
+  saveCode,
+  updateCode,
+  deleteCode,
+} = require("../controllers/CodeControllers");
 
-module.exports = { router };
+// Define routes
+router.get("/get", getCode);
+router.post("/save", saveCode);
+router.put("/update/:id", updateCode);
+router.delete("/delete/:id", deleteCode);
 
+module.exports = router; // Export the router
