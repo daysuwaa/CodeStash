@@ -3,13 +3,12 @@ import axios from "axios";
 import Spinner from "../components/Spinner";
 import { Link } from "react-router-dom";
 import { AiOutlinePlus } from "react-icons/ai";
-import CodeTable from "./Home/CodeTable";
 import CodeCards from "./Home/CodeCards";
+import Navbar from "../components/Navbar";
 
 const Home = () => {
   const [codeList, setCodeList] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [showType, setShowType] = useState("table");
   useEffect(() => {
     setLoading(true);
     axios
@@ -25,33 +24,35 @@ const Home = () => {
   }, []);
   return (
     <div className="p-4">
-      <div className="flex justify-center items-center gap-x">
-        <button
-          className="bg-teal-500 px-4 py-1 rounded-lg"
-          onClick={() => setShowType("table")}
-        >
-          Table
-        </button>
-        <button
-          className="bg-teal-500 px-4 py-1 rounded-lg"
-          onClick={() => setShowType("card")}
-        >
-          Card
-        </button>
-      </div>
+      <Navbar />
       <div className="flex justify-between items-center">
-        <h1 className="text-3xl my-8">Code List</h1>
-        <Link to="/codes/add">
-          <AiOutlinePlus className="text-teal-500 text-2xl border rounded-full bg-white" />
-        </Link>
+        <h1 className=" text-lg md:text-xl my-5 font-fontfamily5 text-center mx-auto">
+          CodeSnippets
+        </h1>
+        {/* on sm screens */}
+        <div className="md:hidden rounded-full border-2 border-transparent justify-end flex">
+          <div className="rounded-full border-4 border-blue-950 flex justify-end ">
+            <div className="rounded-full border-1  w-full">
+              <Link to="/codes/add">
+                <AiOutlinePlus className="text-gray-300 text-4xl bg-transparent rounded-full border-white border-[3px] hover:border-[1px] p-1 md:p-2 hover:p-0 hover:scale-125 duration-300" />
+              </Link>
+            </div>
+          </div>
+        </div>
       </div>
-      {loading ? (
-        <Spinner />
-      ) : showType === "table" ? (
-        <CodeTable codeList={codeList} />
-      ) : (
-        <CodeCards codeList={codeList} />
-      )}
+      {loading ? <Spinner /> : <CodeCards codeList={codeList} />}
+      {/* on md screens */}
+      <div className="hidden rounded-full border-2 border-transparent justify-end md:flex bottom-10 fixed right-10 ">
+        <div className="rounded-full border-2 border-white flex justify-end ">
+          <div className="rounded-full border-4 border-blue-950 flex justify-end ">
+            <div className="rounded-full border-2  w-full">
+              <Link to="/codes/add">
+                <AiOutlinePlus className="text-gray-300 md:text-5xl bg-transparent rounded-full border-white border-[3px] hover:border-[1px] p-1 md:p-2 hover:p-0 hover:scale-125 duration-300 " />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

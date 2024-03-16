@@ -6,7 +6,12 @@ import { BrowserRouter } from "react-router-dom";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <BrowserRouter>
-    <SnackbarProvider>
+    <SnackbarProvider
+      anchorOrigin={{
+        vertical: "top",
+        horizontal: "right",
+      }}
+    >
       <App />
     </SnackbarProvider>
   </BrowserRouter>

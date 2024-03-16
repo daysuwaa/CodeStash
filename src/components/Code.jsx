@@ -71,7 +71,7 @@ const Code = ({ isOpen, handleClose }) => {
           </form>
         </div>
       </div>
-      <SlFolderAlt className="flex ml-auto h-5 w-5" />
+      <SlFolderAlt type="submit" className="flex ml-auto h-5 w-5" />
     </Modal>
   );
 };

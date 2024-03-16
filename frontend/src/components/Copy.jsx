@@ -23,7 +23,7 @@ const CopyToClipboard = ({ textToCopy }) => {
         className="rounded  text-black "
         onClick={() => handleCopyToClipboard(textToCopy)}
       >
-        <GoCopy className="text-2xl  " />
+        <GoCopy className="text-2xl  hover:scale-110 " />
       </button>
       <Toaster />
     </div>
