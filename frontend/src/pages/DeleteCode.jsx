@@ -4,6 +4,7 @@ import Spinner from "../components/Spinner";
 import BackButton from "../components/BackButton";
 import { useSnackbar } from "notistack";
 import { useNavigate, useParams } from "react-router-dom";
+import Navbar from "../components/Navbar";
 
 const DeleteCode = () => {
   const [loading, setLoading] = useState(false);
@@ -17,7 +18,14 @@ const DeleteCode = () => {
       .delete(`http://localhost:5555/codes/${id}`)
       .then(() => {
         setLoading(false);
-        enqueueSnackbar("Stash deleted succesfully", { variant: "success" });
+        enqueueSnackbar("Stash deleted succesfully", {
+          variant: "success",
+          autoHideDuration: 2000,
+          anchorOrigin: {
+            vertical: "top",
+            horizontal: "right",
+          },
+        });
         navigate("/");
       })
       .catch((error) => {
@@ -27,20 +35,25 @@ const DeleteCode = () => {
       });
   };
   return (
-    <div className="p-4">
-      <BackButton />
-      <h1 className="text-3xl my-8">Delete Code</h1>
-      {loading ? <Spinner /> : ""}
+    <div className="font-fontfamily5">
+      <Navbar />
+      <div className="flex items-center mt-9 mb-5">
+        <BackButton />
+        <h1 className="text-xl text-center mx-[3rem] md:mx-auto  font-fontfamily5">
+          Delete Code Snippet
+        </h1>
+      </div>
 
-      <div className="flex flex-col items-center border-2 bordder-teal-500 rounded-xl w-[600px] p-8 mx-auto">
-        <h3 className="text-2xl">Are you sure you want to delete thos code</h3>
+      <div className="flex flex-col  mt-[10rem] md:mt-[6rem] items-center border  rounded w-[400px] pt-5 mx-auto">
+        <h3 className="text-lg">Are you sure you want to delete this code</h3>
         <button
-          className="p-4 bg-red-600 text-white m-8 w-fulll"
+          className="py-2 px-5 bg-red-600 hover:bg-red-500 text-white text-sm m-5 rounded"
           onClick={handleDeleteCode}
         >
-          yes, Delete it
+          Yes, Delete it
         </button>
       </div>
+      <div className="flex justify-center">{loading ? <Spinner /> : ""}</div>
     </div>
   );
 };
