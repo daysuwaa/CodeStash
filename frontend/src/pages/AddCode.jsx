@@ -33,7 +33,7 @@ const AddCode = () => {
       .post(`http://localhost:5555/codes`, data)
       .then(() => {
         setLoading(false);
-        enqueueSnackbar("CodeSnippet created succesfully", {
+        enqueueSnackbar("Code Stash created succesfully", {
           variant: "success",
           autoHideDuration: 2000,
         });
@@ -42,7 +42,7 @@ const AddCode = () => {
       })
       .catch((error) => {
         setLoading(false);
-        enqueueSnackbar("Error Creating CodeSnippet", {
+        enqueueSnackbar("Error Creating Code Stash", {
           variant: "error",
           autoHideDuration: 2000,
         });
