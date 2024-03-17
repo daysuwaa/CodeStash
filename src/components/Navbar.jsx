@@ -11,9 +11,9 @@ export default function Navbar() {
       </h1>
       <div className="flex items-center text-sm  mx-auto gap-6">
         <a
-          href="/home"
+          href="/"
           className={`hover:text-teal-500 ${
-            isActive("/home") ? "border-b-4 border-teal-700" : "text-white"
+            isActive("/") ? "border-b-4 border-teal-700" : "text-white"
           }`}
         >
           Home
