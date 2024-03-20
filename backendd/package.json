@@ -23,6 +23,8 @@
     "mongoose": "^8.2.1",
     "morgan": "^1.10.0",
     "nodemon": "^3.1.0",
+    "notistack": "^3.0.1",
+    "react-dom": "^18.2.0",
     "validator": "^13.11.0"
   }
 }
