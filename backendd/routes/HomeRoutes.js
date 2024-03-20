@@ -4,12 +4,12 @@ import requireAuth from "../middleware/requireAuth.js";
 
 const router = express.Router();
 // require auth for all code
-router.use(requireAuth);
+//router.use(requireAuth);
 
 router.use(express.json());
 
 // route to save a new code
-router.post("/", async (req, res) => {
+router.post("/", requireAuth, async (req, res) => {
   // Mark the callback function as async
   try {
     if (!req.body.title || !req.body.code || !req.body.language) {
@@ -32,7 +32,7 @@ router.post("/", async (req, res) => {
 });
 
 // route for get all codes from database
-router.get("/", async (req, res) => {
+router.get("/", requireAuth, async (req, res) => {
   try {
     const code = await Code.find({});
     return res.status(200).json({
@@ -46,7 +46,7 @@ router.get("/", async (req, res) => {
 });
 
 // route for get a single code from database
-router.get("/:id", async (req, res) => {
+router.get("/:id", requireAuth, async (req, res) => {
   try {
     const { id } = req.params;
 
@@ -60,7 +60,7 @@ router.get("/:id", async (req, res) => {
 });
 
 // route for update a single code from database
-router.put("/:id", async (req, res) => {
+router.put("/:id", requireAuth, async (req, res) => {
   try {
     if (!req.body.title || !req.body.code || !req.body.language) {
       return res.status(400).send({
