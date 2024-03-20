@@ -28,7 +28,7 @@ const Navbar = () => {
 
   return (
     <header>
-      <div className="container">
+      <div className="">
         <div className="mt-[3rem] flex items-center ">
           <h1 className="font-fontfamily3 md:text-5xl text-4xl font-bold">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-700">
@@ -39,7 +39,7 @@ const Navbar = () => {
           <nav className=" flex ml-auto">
             {user && (
               <div>
-                <span className="font-">{user.username}</span>
+                <span className="font-fontfamily5">{user.username}</span>
                 <button
                   onClick={handleClick}
                   className="border px-3.5 py-1 ml-4"
