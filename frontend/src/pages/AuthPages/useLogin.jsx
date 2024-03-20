@@ -8,7 +8,7 @@ export const useLogin = () => {
   const { dispatch } = useAuthContext();
   const { enqueueSnackbar } = useSnackbar();
 
-  const login = async (email, password) => {
+  const login = async (username, password) => {
     setLoading(true);
     setError(null);
 
@@ -19,7 +19,7 @@ export const useLogin = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          email,
+          username,
           password,
         }),
       });

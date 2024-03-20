@@ -6,14 +6,14 @@ import Navbar from "../../components/Navbar";
 import { useLogin } from "./useLogin";
 
 const Login = () => {
-  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
   const { login, error, loading } = useLogin();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await login(email, password);
+    await login(username, password);
   };
   return (
     <div>
@@ -36,8 +36,8 @@ const Login = () => {
           label="Username"
           type="text"
           id="username"
-          value={email}
-          setValue={setEmail}
+          value={username}
+          setValue={setUsername}
         />
 
         <Forminput

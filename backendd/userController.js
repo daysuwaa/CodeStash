@@ -8,13 +8,13 @@ const createToken = ({ _id }) => {
 };
 // Controller function to login a user
 export const loginUser = async (req, res) => {
-  const { email, password } = req.body;
+  const { username, password } = req.body;
   try {
-    const user = await User.login(email, password); // Assuming User.login is defined in userModel.js
+    const user = await User.login(username, password); // Assuming User.login is defined in userModel.js
 
     const token = createToken(user); // Create JWT token using createToken function
 
-    res.status(200).json({ email, token });
+    res.status(200).json({ username, token });
   } catch (error) {
     res.status(400).json({ error: error.message });
   }
@@ -22,13 +22,13 @@ export const loginUser = async (req, res) => {
 
 // Controller function to sign in a user
 export const signupUser = async (req, res) => {
-  const { email, password } = req.body;
+  const { email, password, username } = req.body;
   try {
-    const user = await User.signup(email, password); // Assuming User.signin is defined in userModel.js
+    const user = await User.signup(email, password, username); // Assuming User.signin is defined in userModel.js
 
     //const token = createToken(user._id); // Create JWT token using createToken function
 
-    return res.status(200).json({ email: email });
+    return res.status(200).json({ email: email, username: username });
   } catch (error) {
     res.status(400).json({ error: error.message });
   }

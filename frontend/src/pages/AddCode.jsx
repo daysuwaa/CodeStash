@@ -77,7 +77,7 @@ const AddCode = () => {
           Add CodeSnippet to Stash
         </h1>
       </div>
-      {loading ? <Spinner /> : ""}
+      {loading && <Spinner />}
       <div className="flex flex-col border-[1px] border-gray-500 rounded w-[350px] md:w-[600px] py-5  mx-auto">
         <div className="grid md:grid-cols-2 mx-4 gap-4 ">
           <label className="text-[15px] font-fontfamily5 text-gray-300 ">

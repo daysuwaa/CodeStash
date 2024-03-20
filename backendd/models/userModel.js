@@ -14,13 +14,18 @@ const userSchema = new Schema({
     type: String,
     required: true,
   },
+  username: {
+    type: String,
+    required: true,
+    unique: true,
+  },
 });
 
 // static signin method
-userSchema.statics.signup = async function (email, password) {
-  //validation
-  if (!email || !password) {
-    throw Error("Email and password are required");
+userSchema.statics.signup = async function (email, password, username) {
+  // Validation
+  if (!username || !email || !password) {
+    throw Error("Email, password, and username are required");
   }
   if (!validator.isEmail(email)) {
     throw Error("Email is not valid");
@@ -33,19 +38,19 @@ userSchema.statics.signup = async function (email, password) {
 
   const hashedPassword = await argon.hash(password);
 
-  const user = await this.create({ email, password: hashedPassword });
+  const user = await this.create({ email, password: hashedPassword, username });
   return user;
 };
 
 // static login method
-userSchema.statics.login = async function (email, password) {
+userSchema.statics.login = async function (username, password) {
   //validation
-  if (!email || !password) {
-    throw Error("Email and password are required");
+  if (!username || !password) {
+    throw Error("Username and password are required");
   }
-  const user = await this.findOne({ email });
+  const user = await this.findOne({ username });
   if (!user) {
-    throw Error("Incorrect Email");
+    throw Error("Incorrect Username");
   }
   const match = await argon.verify(user.password, password);
   if (!match) {

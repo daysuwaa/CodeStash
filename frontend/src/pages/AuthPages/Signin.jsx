@@ -9,10 +9,11 @@ const Signup = () => {
   // const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [username, setUsername] = useState("");
   const { signup, error, loading } = useSignup();
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await signup(email, password);
+    await signup(email, password, username);
   };
   return (
     <div>
@@ -29,13 +30,13 @@ const Signup = () => {
         </div>
         <p className="font-fontfamily5 text-lg text-gray-400  my-4 ">Sign in</p>
 
-        {/* <Forminput
+        <Forminput
           label="Username"
           type="text"
           id="username"
           value={username}
           setValue={setUsername}
-        /> */}
+        />
         <Forminput
           label="Email Address"
           type="email"

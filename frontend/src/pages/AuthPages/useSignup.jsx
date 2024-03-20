@@ -8,7 +8,7 @@ export const useSignup = () => {
   const { dispatch } = useAuthContext();
   const { enqueueSnackbar } = useSnackbar();
 
-  const signup = async (email, password) => {
+  const signup = async (email, password, username) => {
     // Changed function name to signin
     setLoading(true);
     setError(null);
@@ -18,11 +18,12 @@ export const useSignup = () => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
+          // Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
         body: JSON.stringify({
           email,
           password,
+          username,
         }),
       });
 
