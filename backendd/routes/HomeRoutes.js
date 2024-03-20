@@ -21,6 +21,7 @@ router.post("/", requireAuth, async (req, res) => {
       title: req.body.title,
       code: req.body.code,
       language: req.body.language,
+      owner: req.user._id
     };
     const newCode = await Code.create(addNewCode);
 
@@ -34,7 +35,9 @@ router.post("/", requireAuth, async (req, res) => {
 // route for get all codes from database
 router.get("/", requireAuth, async (req, res) => {
   try {
-    const code = await Code.find({});
+    const loggedUser = req.user
+
+    const code = await Code.find({ owner: req.user._id });
     return res.status(200).json({
       count: code.length,
       data: code,

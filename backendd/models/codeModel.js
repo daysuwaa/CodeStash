@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose, { Types } from "mongoose";
 
 const codeSchema = mongoose.Schema(
   {
@@ -14,6 +14,10 @@ const codeSchema = mongoose.Schema(
       type: String,
       required: true,
     },
+    owner: {
+      type: Types.ObjectId,
+      required: true
+    }
   },
   {
     timestamps: true,
