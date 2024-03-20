@@ -21,7 +21,7 @@ const Signup = () => {
       <Logout />
       <form
         onSubmit={handleSubmit}
-        className=" rounded border-[0.3px]  border-teal-950 p-9 max-w-md mx-auto mt-10"
+        className=" mx-7 rounded border-[0.3px] border-blue-950 p-5 max-w-md sm:mx-auto mt-[5rem]"
       >
         <div className="flex items-center ">
           <h1 className=" md:text-2xl  text-xl font-fontfamily5 font-semibold  text-blue-800">
