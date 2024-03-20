@@ -1,8 +1,7 @@
 import jwt from "jsonwebtoken";
-// import { SECRET } from "../config.js";
 import User from "../models/userModel.js";
 
-// require auth for lal codestash route
+// // require auth for lal codestash route
 const requireAuth = async (req, res, next) => {
   // verify authetication
 
@@ -14,7 +13,7 @@ const requireAuth = async (req, res, next) => {
   const token = authorization.split(" ")[1];
 
   try {
-    const { _id } = jwt.verify(token, SECRET);
+    const { _id } = jwt.verify(token, process.env.SECRET);
 
     req.user = await User.findOne({ _id }).select("_id");
     next();

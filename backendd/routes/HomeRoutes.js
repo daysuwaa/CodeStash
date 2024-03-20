@@ -3,8 +3,11 @@ import { Code } from "../models/codeModel.js";
 import requireAuth from "../middleware/requireAuth.js";
 
 const router = express.Router();
-router.use(express.json());
+// require auth for all code
 router.use(requireAuth);
+
+router.use(express.json());
+
 // route to save a new code
 router.post("/", async (req, res) => {
   // Mark the callback function as async
