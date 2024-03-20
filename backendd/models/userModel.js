@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 import bcyrpt from "bcrypt";
-import * as argon from "argon2"
+import * as argon from "argon2";
 import validator from "validator";
 const Schema = mongoose.Schema;
 
@@ -17,7 +17,7 @@ const userSchema = new Schema({
 });
 
 // static signin method
-userSchema.statics.signin = async function(email, password) {
+userSchema.statics.signup = async function (email, password) {
   //validation
   if (!email || !password) {
     throw Error("Email and password are required");
@@ -38,7 +38,7 @@ userSchema.statics.signin = async function(email, password) {
 };
 
 // static login method
-userSchema.statics.login = async function(email, password) {
+userSchema.statics.login = async function (email, password) {
   //validation
   if (!email || !password) {
     throw Error("Email and password are required");

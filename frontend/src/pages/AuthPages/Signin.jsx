@@ -2,17 +2,17 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import Forminput from "./FormInput";
 import Navbar from "../../components/Navbar";
-import { useSignin } from "./useSignup";
+import { useSignup } from "./useSignup";
 import Logout from "../../components/Logout";
 
-const Signin = () => {
+const Signup = () => {
   // const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { signin, error, loading } = useSignin();
+  const { signup, error, loading } = useSignup();
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await signin(email, password);
+    await signup(email, password);
   };
   return (
     <div>
@@ -77,4 +77,4 @@ const Signin = () => {
   );
 };
 
-export default Signin;
+export default Signup;

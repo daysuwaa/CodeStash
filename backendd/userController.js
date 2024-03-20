@@ -21,10 +21,10 @@ export const loginUser = async (req, res) => {
 };
 
 // Controller function to sign in a user
-export const signinUser = async (req, res) => {
+export const signupUser = async (req, res) => {
   const { email, password } = req.body;
   try {
-    const user = await User.signin(email, password); // Assuming User.signin is defined in userModel.js
+    const user = await User.signup(email, password); // Assuming User.signin is defined in userModel.js
 
     //const token = createToken(user._id); // Create JWT token using createToken function
 

@@ -2,13 +2,13 @@ import { useState } from "react";
 import { useAuthContext } from "./useAuthContext";
 import { useSnackbar } from "notistack";
 
-export const useSignin = () => {
+export const useSignup = () => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
   const { dispatch } = useAuthContext();
   const { enqueueSnackbar } = useSnackbar();
 
-  const signin = async (email, password) => {
+  const signup = async (email, password) => {
     // Changed function name to signin
     setLoading(true);
     setError(null);
@@ -54,5 +54,5 @@ export const useSignin = () => {
     }
   };
 
-  return { signin, error, loading }; // Changed function name to signin
+  return { signup, error, loading }; // Changed function name to signin
 };

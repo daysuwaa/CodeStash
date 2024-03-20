@@ -1,6 +1,6 @@
 // Backend routes/user.js
 import express from "express";
-import { loginUser, signinUser } from "../userController.js";
+import { loginUser, signupUser } from "../userController.js";
 
 const userRoutes = express.Router();
 
@@ -8,6 +8,6 @@ const userRoutes = express.Router();
 userRoutes.post("/login", loginUser);
 
 // Signup route
-userRoutes.post("/signup", signinUser);
+userRoutes.post("/signup", signupUser);
 
 export default userRoutes;
