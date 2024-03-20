@@ -105,7 +105,7 @@ const Home = () => {
     if (user) {
       fetchCodes();
     }
-  }, [codeList, user]);
+  }, [user]);
 
   return (
     <div className="p-4">
