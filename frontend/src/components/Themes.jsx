@@ -1,41 +1,5 @@
-<<<<<<< HEAD
-// import { useState, useEffect } from "react";
-// import { MdOutlineWbSunny } from "react-icons/md";
-// import { MdNightlight } from "react-icons/md";
-
-// const Themes = () => {
-//   const [theme, setTheme] = useState("light");
-
-//   useEffect(() => {
-//     if (theme === "light") {
-//       document.body.classList.remove(<MdOutlineWbSunny />);
-//     } else {
-//       document.body.classList.add(<MdNightlight />);
-//     }
-//   }, [theme]);
-
-//   const handleThemeChange = () => {
-//     setTheme(theme === "dark" ? "light" : "dark");
-//   };
-
-//   return (
-//     <div>
-//       <button
-//         className="bg-red-300 p-4 rounded-3xl"
-//         onClick={handleThemeChange}
-//       >
-//         {theme === "dark" ? "Light Mode" : "Dark Mode"}
-//       </button>
-//     </div>
-//   );
-// };
-
-// export default Themes;
 import { useState, useEffect } from "react";
 import { MdOutlineWbSunny, MdNightlight } from "react-icons/md";
-=======
-import { useState, useEffect } from "react";
->>>>>>> origin/main
 
 const Themes = () => {
   const [theme, setTheme] = useState("light");
@@ -54,7 +18,6 @@ const Themes = () => {
 
   return (
     <div>
-<<<<<<< HEAD
       <div className="mr-2 inline-block relative">
         <button
           className={`h-8 w-[60px] rounded-3xl flex items-center justify-center ${
@@ -71,14 +34,6 @@ const Themes = () => {
           )}
         </button>
       </div>
-=======
-      <button
-        className="bg-red-300 p-4 rounded-3xl"
-        onClick={handleThemeChange}
-      >
-        {theme === "dark" ? "Light Mode" : "Dark Mode"}
-      </button>
->>>>>>> origin/main
     </div>
   );
 };

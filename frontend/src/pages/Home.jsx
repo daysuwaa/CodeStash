@@ -35,12 +35,6 @@ const Home = () => {
 
   return (
     <div className="">
-<<<<<<< HEAD
-      {/* <Navbar /> */}
-=======
-      <Navbar />
->>>>>>> origin/main
-
       <div className="flex justify-between items-center">
         <h1 className="text-lg  md:text-xl mb-5 mt-[3rem] font-fontfamily5 text-center mx-auto">
           CodeSnippets
