@@ -3,12 +3,13 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import Forminput from "./FormInput";
 import { useLogin } from "./useLogin";
+import Navbar from "../../components/Navbar";
 
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  const { login, error, loading } = useLogin();
+  const { login, loading } = useLogin();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -16,21 +17,17 @@ const Login = () => {
   };
   return (
     <div className="">
-<<<<<<< HEAD
-=======
       <Navbar />
-
->>>>>>> origin/main
       <form
         onSubmit={handleSubmit}
-        className=" mx-7 rounded border-[0.3px] border-blue-950 p-5 max-w-md sm:mx-auto mt-[5rem]"
+        className=" mx-7 rounded border-[0.3px] border-lime-800 p-5 max-w-md sm:mx-auto mt-[5rem]"
       >
         <div className="flex items-center ">
-          <h1 className=" text-xl font-fontfamily5  text-blue-800">
+          <h1 className=" text-xl font-fontfamily5  dark:text-lime-400">
             Welcome back
           </h1>
         </div>
-        <p className="font-fontfamily5 text-md text-gray-400  my-4 ">
+        <p className="font-fontfamily5 text-md dark:text-gray-400  my-4 ">
           Log in to continue
         </p>
 
@@ -50,23 +47,21 @@ const Login = () => {
           setValue={setPassword}
         />
 
-        {/* <Link to="/"> */}
         <button
-          // type="submit"
           disabled={loading}
-          className="bg-blue-800 hover:bg-blue-700 mt-4 text-white font-fontfamily5 w-full py-2 rounded focus:outline-none focus:shadow-outline"
+          className="bg-lime-400 hover:bg-lime-600 mt-4 text-black font-fontfamily5 w-full py-2 rounded focus:outline-none focus:shadow-outline"
         >
           Log in
         </button>
-        {error && (
+        {/* {error && (
           <div className="error border border-red-600 text-center p-3 font-light text-white">
             {error}
           </div>
-        )}
+        )} */}
         {/* </Link> */}
-        <p className="font-fontfamily5 mt-4 text-gray-400  text-sm">
+        <p className="font-fontfamily5 mt-4 dark:text-gray-400  text-sm">
           Dont have an account?
-          <Link to="/signup" className="text-blue-600 mx-2 underline">
+          <Link to="/signup" className="text-lime-500 mx-2 underline">
             Sign up
           </Link>
         </p>

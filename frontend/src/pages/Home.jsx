@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { AiOutlinePlus } from "react-icons/ai";
 import CodeCards from "./Home/CodeCards";
 import { useAuthContext } from "./AuthPages/useAuthContext";
+import User from "../components/User";
 
 const Home = () => {
   const [codeList, setCodeList] = useState([]);
@@ -35,6 +36,7 @@ const Home = () => {
 
   return (
     <div className="">
+      <User />
       <div className="flex justify-between items-center">
         <h1 className="text-lg  md:text-xl mb-5 mt-[3rem] font-fontfamily5 text-center mx-auto">
           CodeSnippets

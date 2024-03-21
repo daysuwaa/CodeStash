@@ -1,16 +1,10 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import Forminput from "./FormInput";
-<<<<<<< HEAD
 
 import { useSignup } from "./useSignup";
-
-=======
 import Navbar from "../../components/Navbar";
-import { useSignup } from "./useSignup";
-import Logout from "../../components/Logout";
 
->>>>>>> origin/main
 const Signup = () => {
   // const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
@@ -23,7 +17,7 @@ const Signup = () => {
   };
   return (
     <div>
-      {/* <Logout /> */}
+      <Navbar />
       <form
         onSubmit={handleSubmit}
         className=" mx-7 rounded border-[0.3px] border-blue-950 p-5 max-w-md sm:mx-auto mt-[5rem]"

@@ -4,7 +4,6 @@ import Spinner from "../components/Spinner";
 import BackButton from "../components/BackButton";
 import { useNavigate } from "react-router-dom";
 import { useSnackbar } from "notistack";
-
 import { useAuthContext } from "../pages/AuthPages/useAuthContext"; // Import the authentication context
 
 const AddCode = () => {
@@ -13,7 +12,6 @@ const AddCode = () => {
   const textAreaRef = useRef(null);
   const [language, setLanguage] = useState("");
   const [loading, setLoading] = useState(false);
-
   const navigate = useNavigate();
   const { enqueueSnackbar } = useSnackbar();
   const { user } = useAuthContext(); // Access the user from the authentication context

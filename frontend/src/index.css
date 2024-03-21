@@ -3,14 +3,13 @@
 @tailwind utilities;
 
 .dark {
-    background-color: #060117;
+    background-color: black;
     color: #cbd5e0;
   }
 .active-link {
-    border-bottom: 3px solid; 
+    border-bottom: rgb(179, 255, 0) 3px solid; 
   }
 body{
-  background-color:rgb(231, 231, 231) ;
-  background-color: #bfdbfe;
+  background-color:rgb(241, 241, 241);
   color: black;
 }

@@ -14,7 +14,7 @@ const CodeSingleCard = ({ code }) => {
   return (
     <div
       key={code._id}
-      className="border-[0.5px] shadow-lg bg-[#0b102a] text-gray-300 dark:text-gray-600 dark:bg-blue-200  shadow-slate-500 font-fontfamily5 border-gray-800  rounded-lg px-4 py-2 m-4 relative "
+      className="border-[0.5px] shadow-lg  text-gray-600  bg-lime-400  shadow-slate-600 font-fontfamily5 border-gray-800  rounded-lg px-4 py-2 m-4 relative "
     >
       <div className="flex justify-start items-center mt-4 gap-x-3">
         <LuStickyNote className="text-gray-600 ml-4  text-2xl" />
@@ -22,7 +22,7 @@ const CodeSingleCard = ({ code }) => {
       </div>
 
       <div className="flex justify-start items-center gap-x-3">
-        <IoCodeSlashSharp className="text-gray-600 ml-4 text-2xl" />
+        <IoCodeSlashSharp className=" ml-4 text-2xl" />
         <h2 className="my-1 font-semibold">{code.language}</h2>
       </div>
 

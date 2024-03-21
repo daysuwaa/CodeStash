@@ -5,7 +5,7 @@ const Forminput = ({ label, htmlFor, type, value, setValue }) => {
     <div className="mb-4">
       <label
         htmlFor={htmlFor}
-        className="block text-gray-400 text-sm font-fontfamily5 mb-2"
+        className="block dark:text-gray-400 text-sm font-fontfamily5 mb-2"
       >
         {label}
 
@@ -13,7 +13,7 @@ const Forminput = ({ label, htmlFor, type, value, setValue }) => {
           type={type}
           value={value}
           onChange={(e) => setValue(e.target.value)}
-          className="  rounded w-full bg-slate-300 mt-2 py-2 px-3  focus:outline-none focus:border-teal-300 focus:shadow-outline text-gray-700 leading-tight  focus:shadow-outlin"
+          className="  rounded w-full border border-black bg-transparent dark:bg-slate-300 mt-2 py-2 px-3  focus:outline-none focus:border-lime-900 focus:shadow-outline text-gray-700 leading-tight  focus:shadow-outlin"
         />
       </label>
     </div>
