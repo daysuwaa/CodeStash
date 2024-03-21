@@ -1,9 +1,16 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import Forminput from "./FormInput";
+<<<<<<< HEAD
 
 import { useSignup } from "./useSignup";
 
+=======
+import Navbar from "../../components/Navbar";
+import { useSignup } from "./useSignup";
+import Logout from "../../components/Logout";
+
+>>>>>>> origin/main
 const Signup = () => {
   // const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");

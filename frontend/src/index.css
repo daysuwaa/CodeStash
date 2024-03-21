@@ -10,6 +10,10 @@
     border-bottom: 3px solid; 
   }
 body{
+<<<<<<< HEAD
   background-color:rgb(231, 231, 231) ;
+=======
+  background-color: #bfdbfe;
+>>>>>>> origin/main
   color: black;
 }

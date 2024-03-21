@@ -7,14 +7,22 @@ import EditCode from "./pages/EditCode";
 import DeleteCode from "./pages/DeleteCode";
 import Signup from "./pages/AuthPages/Signin";
 import Login from "./pages/AuthPages/Login";
+<<<<<<< HEAD
 import Navbar from "./components/Navbar";
+=======
+import Themes from "./components/Themes";
+>>>>>>> origin/main
 // import Forgotpassword from "./pages/AuthPages/ForgottenPassword";
 const App = () => {
   const { user } = useAuthContext();
   return (
     <div>
+<<<<<<< HEAD
       <Navbar />
       {/* <Themes /> */}
+=======
+      <Themes />
+>>>>>>> origin/main
       <Routes>
         <Route path="/" element={user ? <Home /> : <Navigate to="/login" />} />
         <Route path="/codes/add" element={<AddCode />} />

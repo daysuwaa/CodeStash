@@ -22,8 +22,12 @@ const Navbar = () => {
             </span>
           </h1>
 
+<<<<<<< HEAD
           <nav className=" flex items-center ml-auto">
             <Themes />
+=======
+          <nav className=" flex ml-auto">
+>>>>>>> origin/main
             {user && (
               <div>
                 <span className="font-fontfamily5 text-lg font-semibold  dark:text-gray-400">
@@ -61,7 +65,11 @@ const Navbar = () => {
           </nav>
         </div>
       </div>
+<<<<<<< HEAD
       <hr className="h-[0.1px] border-gray-900 hidden md:block"></hr>
+=======
+      <hr className="h-[0.1px] border-gray-900"></hr>
+>>>>>>> origin/main
     </header>
   );
 };

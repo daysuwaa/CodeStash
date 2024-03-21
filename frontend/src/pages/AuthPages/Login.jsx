@@ -16,6 +16,11 @@ const Login = () => {
   };
   return (
     <div className="">
+<<<<<<< HEAD
+=======
+      <Navbar />
+
+>>>>>>> origin/main
       <form
         onSubmit={handleSubmit}
         className=" mx-7 rounded border-[0.3px] border-blue-950 p-5 max-w-md sm:mx-auto mt-[5rem]"
