@@ -4,7 +4,7 @@ import Spinner from "../components/Spinner";
 import BackButton from "../components/BackButton";
 import { useNavigate } from "react-router-dom";
 import { useSnackbar } from "notistack";
-import Navbar from "../components/Navbar";
+
 import { useAuthContext } from "../pages/AuthPages/useAuthContext"; // Import the authentication context
 
 const AddCode = () => {
@@ -70,14 +70,14 @@ const AddCode = () => {
 
   return (
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
       <div className="flex items-center mt-9 mb-5">
         <BackButton />
         <h1 className="text-2xl text-center mx-[3rem] md:mx-auto  font-fontfamily5">
           Add CodeSnippet to Stash
         </h1>
       </div>
-      {loading ? <Spinner /> : ""}
+      {loading && <Spinner />}
       <div className="flex flex-col border-[1px] border-gray-500 rounded w-[350px] md:w-[600px] py-5  mx-auto">
         <div className="grid md:grid-cols-2 mx-4 gap-4 ">
           <label className="text-[15px] font-fontfamily5 text-gray-300 ">

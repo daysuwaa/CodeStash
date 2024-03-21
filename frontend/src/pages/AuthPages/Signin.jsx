@@ -1,26 +1,25 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import Forminput from "./FormInput";
-import Navbar from "../../components/Navbar";
-import { useSignin } from "./useSignup";
-import Logout from "../../components/Logout";
 
-const Signin = () => {
+import { useSignup } from "./useSignup";
+
+const Signup = () => {
   // const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { signin, error, loading } = useSignin();
+  const [username, setUsername] = useState("");
+  const { signup, error, loading } = useSignup();
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await signin(email, password);
+    await signup(email, password, username);
   };
   return (
     <div>
-      <Navbar />
-      <Logout />
+      {/* <Logout /> */}
       <form
         onSubmit={handleSubmit}
-        className=" rounded border-[0.3px]  border-teal-950 p-9 max-w-md mx-auto mt-10"
+        className=" mx-7 rounded border-[0.3px] border-blue-950 p-5 max-w-md sm:mx-auto mt-[5rem]"
       >
         <div className="flex items-center ">
           <h1 className=" md:text-2xl  text-xl font-fontfamily5 font-semibold  text-blue-800">
@@ -29,13 +28,13 @@ const Signin = () => {
         </div>
         <p className="font-fontfamily5 text-lg text-gray-400  my-4 ">Sign in</p>
 
-        {/* <Forminput
+        <Forminput
           label="Username"
           type="text"
           id="username"
           value={username}
           setValue={setUsername}
-        /> */}
+        />
         <Forminput
           label="Email Address"
           type="email"
@@ -77,4 +76,4 @@ const Signin = () => {
   );
 };
 
-export default Signin;
+export default Signup;

@@ -1,13 +1,13 @@
 // Backend routes/user.js
 import express from "express";
-import { loginUser, signinUser } from "../userController.js";
+import { loginUser, signupUser } from "../userController.js";
 
-const router = express.Router();
+const userRoutes = express.Router();
 
 // Login route
-router.post("/login", loginUser);
+userRoutes.post("/login", loginUser);
 
 // Signup route
-router.post("/signin", signinUser);
+userRoutes.post("/signup", signupUser);
 
-export default router;
+export default userRoutes;

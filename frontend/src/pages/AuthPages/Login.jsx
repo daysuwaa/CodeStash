@@ -2,26 +2,23 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import Forminput from "./FormInput";
-import Navbar from "../../components/Navbar";
 import { useLogin } from "./useLogin";
 
 const Login = () => {
-  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
   const { login, error, loading } = useLogin();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await login(email, password);
+    await login(username, password);
   };
   return (
-    <div>
-      <Navbar />
-
+    <div className="">
       <form
         onSubmit={handleSubmit}
-        className=" rounded border-[0.3px]  border-teal-950 p-9 max-w-md mx-auto mt-4"
+        className=" mx-7 rounded border-[0.3px] border-blue-950 p-5 max-w-md sm:mx-auto mt-[5rem]"
       >
         <div className="flex items-center ">
           <h1 className=" text-xl font-fontfamily5  text-blue-800">
@@ -36,8 +33,8 @@ const Login = () => {
           label="Username"
           type="text"
           id="username"
-          value={email}
-          setValue={setEmail}
+          value={username}
+          setValue={setUsername}
         />
 
         <Forminput
@@ -64,7 +61,7 @@ const Login = () => {
         {/* </Link> */}
         <p className="font-fontfamily5 mt-4 text-gray-400  text-sm">
           Dont have an account?
-          <Link to="/signin" className="text-blue-600 mx-2 underline">
+          <Link to="/signup" className="text-blue-600 mx-2 underline">
             Sign up
           </Link>
         </p>
