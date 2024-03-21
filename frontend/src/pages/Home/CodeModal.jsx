@@ -5,10 +5,10 @@ import CopyToClipboard from "../../components/Copy";
 const CodeModal = ({ code, onClose }) => {
   return (
     <div
-      className="fixed bg-black bg-opacity-70 mx-5  overflow-auto top-0 pt-5  left-0 right-0 bottom-0   z-50 flex justify-center items-center"
+      className="fixed bg-black bg-opacity-70   overflow-auto top-0 pt-5  left-0 right-0 bottom-0   z-50 flex justify-center items-center"
       onClick={onClose}
     >
-      <div className=" max-h-[99%] overflow-y-auto">
+      <div className=" max-h-[99%] mx-5 overflow-y-auto">
         <div
           onClick={(event) => event.stopPropagation()}
           className="w-[400px] md:w-[600px] max-w-full md:mx-0 font-fontfamily5 text-blue-950 bg-white rounded-xl p-4 flex flex-col relative"
