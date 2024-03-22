@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { AiOutlineClose } from "react-icons/ai";
 import CopyToClipboard from "../../components/Copy";
-import Colore from "../../components/Colorfunction";
+// import Colore from "../../components/Colorfunction";
 
 const CodeModal = ({ code, onClose }) => {
   return (

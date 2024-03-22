@@ -32,6 +32,9 @@ const Home = () => {
 
     if (user) {
       fetchCodes();
+    } else {
+      // Reset codeList if user is not logged in
+      setCodeList([]);
     }
   }, [user]);
 
