@@ -16,18 +16,18 @@ const Signup = () => {
     await signup(email, password, username);
   };
   return (
-    <div>
+    <div className="m-7">
       <Navbar />
       <form
         onSubmit={handleSubmit}
-        className=" mx-7 rounded border-[0.3px] border-blue-950 p-5 max-w-md sm:mx-auto mt-[5rem]"
+        className=" rounded border-[0.3px] border-lime-950 p-5 max-w-md sm:mx-auto mt-[5rem]"
       >
         <div className="flex items-center ">
-          <h1 className=" md:text-2xl  text-xl font-fontfamily5 font-semibold  text-blue-800">
+          <h1 className=" md:text-2xl  text-xl font-customfont  font-light text-lime-400">
             Create an account to get started
           </h1>
         </div>
-        <p className="font-fontfamily5 text-lg text-gray-400  my-4 ">Sign in</p>
+        <p className="font-fontfamily5 text-lg text-gray-400  my-4 ">Sign up</p>
 
         <Forminput
           label="Username"
@@ -56,7 +56,7 @@ const Signup = () => {
         <button
           // type="submit"
           disabled={loading}
-          className="bg-blue-800 my-4 hover:bg-blue-700 text-white font-fontfamily5 w-full py-2 rounded focus:outline-none focus:shadow-outline"
+          className="bg-lime-400 my-4 hover:bg-lime-400 text-black font-fontfamily5 w-full py-2 rounded focus:outline-none focus:shadow-outline"
         >
           Sign up
         </button>
@@ -68,7 +68,7 @@ const Signup = () => {
         {/* </Link> */}
         <p className="font-fontfamily5 mt-3 text-gray-400  text-sm">
           Already have an account?
-          <Link to="/login" className="text-blue-600 mx-2 underline">
+          <Link to="/login" className="text-lime-400 mx-2 underline">
             Log in
           </Link>
         </p>

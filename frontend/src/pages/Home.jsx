@@ -6,6 +6,7 @@ import { AiOutlinePlus } from "react-icons/ai";
 import CodeCards from "./Home/CodeCards";
 import { useAuthContext } from "./AuthPages/useAuthContext";
 import User from "../components/User";
+import Footer from "./AuthPages/Footer";
 
 const Home = () => {
   const [codeList, setCodeList] = useState([]);
@@ -41,15 +42,6 @@ const Home = () => {
         <h1 className="text-lg  md:text-xl mb-5 mt-[3rem] font-fontfamily5 text-center mx-auto">
           CodeSnippets
         </h1>
-        <div className="md:hidden mx-3 rounded-full border-2 border-transparent justify-end flex">
-          <div className="rounded-full border-4 border-blue-950 flex justify-end ">
-            <div className="rounded-full border-1  w-full">
-              <Link to="/codes/add">
-                <AiOutlinePlus className="dark:text-gray-300 text-4xl bg-transparent rounded-full border-white border-[3px] hover:border-[1px] p-1 md:p-2 hover:p-0 hover:scale-125 duration-300" />
-              </Link>
-            </div>
-          </div>
-        </div>
       </div>
       {loading ? (
         <Spinner />
@@ -59,17 +51,21 @@ const Home = () => {
           className="text-center justify-center flex"
         />
       )}
-      <div className="hidden rounded-full border-2 border-transparent justify-end md:flex bottom-10 fixed right-10 ">
-        <div className="rounded-full border-4 border-blue-950 flex justify-end ">
-          <div className="rounded-full border-4 border-white flex justify-end ">
-            <div className="rounded-full border-4  border-blue-950  w-full">
-              <Link to="/codes/add">
-                <AiOutlinePlus className="dark:text-gray-300 md:text-5xl bg-transparent rounded-full border-white border-[3px] hover:border-[1px] p-1 md:p-2 hover:p-0 hover:scale-125 duration-300 " />
-              </Link>
+      <div>
+        <div className="hidden rounded-full border-2 border-transparent justify-end md:flex bottom-2 fixed right-10 ">
+          <div className="rounded-full border-4 border-blue-950 flex justify-end ">
+            <div className="rounded-full border-4 border-white flex justify-end ">
+              <div className="rounded-full border-4  border-blue-950  w-full">
+                <Link to="/codes/add">
+                  <AiOutlinePlus className="dark:text-gray-300 md:text-5xl bg-transparent rounded-full border-white border-[3px] hover:border-[1px] p-1 md:p-2 hover:p-0 hover:scale-125 duration-300 " />
+                </Link>
+              </div>
             </div>
           </div>
         </div>
       </div>
+
+      <Footer />
     </div>
   );
 };

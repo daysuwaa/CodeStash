@@ -16,14 +16,14 @@ const Login = () => {
     await login(username, password);
   };
   return (
-    <div className="">
+    <div className="m-7">
       <Navbar />
       <form
         onSubmit={handleSubmit}
-        className=" mx-7 rounded border-[0.3px] border-lime-800 p-5 max-w-md sm:mx-auto mt-[5rem]"
+        className="rounded border-[0.3px] border-lime-800 p-5 max-w-md sm:mx-auto mt-[5rem]"
       >
         <div className="flex items-center ">
-          <h1 className=" text-xl font-fontfamily5  dark:text-lime-400">
+          <h1 className=" text-xl font-customfont  dark:text-lime-400">
             Welcome back
           </h1>
         </div>

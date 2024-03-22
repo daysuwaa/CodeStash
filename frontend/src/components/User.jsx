@@ -18,20 +18,32 @@ const User = () => {
     <div className="mx-5 ">
       <nav className="mt-9">
         {user && (
-          <div className="flex items-center">
-            <Navbar />
-            <div className="flex ml-auto items-center ">
-              <Themes />
-              <button
-                onClick={handleClick}
-                className="hidden md:block border-2  border-black  dark:border-slate-300 px-4 py-1.5 ml-auto rounded text-md font-fontfamily5"
-              >
-                Log out
-              </button>
-              <MdOutlineLogout
-                className="md:hidden w-7 h-7"
-                onClick={handleClick}
-              />
+          <div>
+            <div className="flex items-center">
+              <Navbar />
+              <div className="flex ml-auto items-center ">
+                <Themes />
+                <button
+                  onClick={handleClick}
+                  className="hidden md:block border-2  border-black  dark:border-slate-300 px-4 py-1.5 ml-auto rounded text-md font-fontfamily5"
+                >
+                  Log out
+                </button>
+                <MdOutlineLogout
+                  className="md:hidden mb-1 w-[2rem] h-[2rem]"
+                  onClick={handleClick}
+                />
+              </div>
+            </div>
+            <div>
+              <span className="font-fontfamily5 sm:flex mt-9 md:text-3xl dark:text-gray-300">
+                <p className="font-customfont mt-9 sm:mt-0 text-2xl">
+                  Welcome Back,{" "}
+                </p>
+                <p className="sm:ml-2 text-2xl font-customfont">
+                  {user.username} 👋🏾
+                </p>
+              </span>
             </div>
           </div>
         )}
@@ -53,10 +65,6 @@ const User = () => {
           </div>
         )}
       </nav>
-      <span className="font-fontfamily5 sm:flex mt-9 md:text-3xl dark:text-gray-300">
-        <p className="font-customfont mt-9 sm:mt-0 text-2xl">Welcome Back, </p>
-        <p className="sm:ml-2 text-2xl font-customfont">{user.username} 👋🏾</p>
-      </span>
     </div>
   );
 };

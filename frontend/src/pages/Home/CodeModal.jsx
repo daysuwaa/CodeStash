@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import { AiOutlineClose } from "react-icons/ai";
 import CopyToClipboard from "../../components/Copy";
+import Colore from "../../components/Colorfunction";
 
 const CodeModal = ({ code, onClose }) => {
   return (
@@ -17,7 +18,8 @@ const CodeModal = ({ code, onClose }) => {
             className="absolute right-6 text-3xl text-gray-800 cursor-pointer"
             onClick={onClose}
           />
-          <h2 className="w-fit px-4 py-1 text-white bg-[#1f1541] rounded-lg">
+          <h2 className="w-fit px-4 py-1 text-white bg-black rounded-lg">
+            {/* <Colore /> */}
             {code.language}
           </h2>
           <div className="flex justify-start items-center gap-x- mt-2">
