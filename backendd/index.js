@@ -9,13 +9,7 @@ import morgan from "morgan";
 
 const app = express();
 app.use(express.json());
-app.use(
-  cors({
-    origin: ["https://github.com/daysuwaa/CodeStash"],
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true,
-  })
-);
+app.use(cors());
 app.use(morgan("dev"));
 
 // Debugging: Log the value of MONGODB_URL

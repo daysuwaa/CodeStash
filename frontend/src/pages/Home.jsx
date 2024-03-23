@@ -40,11 +40,11 @@ const Home = () => {
 
   return (
     <div className="">
-      <User />
+      {/* <User /> */}
       <div className="flex justify-between items-center">
-        <h1 className="text-lg  md:text-xl mb-5 mt-[3rem] font-fontfamily5 text-center mx-auto">
+        {/* <h1 className="text-lg  md:text-xl mb-5 mt-[3rem] font-fontfamily5 text-center mx-auto">
           CodeSnippets
-        </h1>
+        </h1> */}
       </div>
       {loading ? (
         <Spinner />
