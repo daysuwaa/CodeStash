@@ -82,7 +82,7 @@ const AddCode = () => {
             Label :
             <input
               type="text"
-              className="border border-gray-300 bg-transparent rounded px-3 py-1.5 mt-2 w-full focus:outline-none focus:border-blue-500 focus:shadow-outline"
+              className="border border-gray-300 bg-transparent rounded px-3 py-1.5 mt-2 w-full focus:outline-none focus:border-lime-500 focus:shadow-outline"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
             />
@@ -91,7 +91,7 @@ const AddCode = () => {
             Programming Language :
             <input
               type="text"
-              className="border border-gray-300 bg-transparent rounded px-3 py-1.5 mt-2 w-full focus:outline-none focus:border-blue-500 focus:shadow-outline "
+              className="border border-gray-300 bg-transparent rounded px-3 py-1.5 mt-2 w-full focus:outline-none focus:border-lime-500 focus:shadow-outline "
               value={language}
               onChange={(e) => setLanguage(e.target.value)}
             />
@@ -101,7 +101,7 @@ const AddCode = () => {
           <label className="text-[15px] font-fontfamily5  text-gray-300">
             Code :
             <textarea
-              className="border resize-none bg-transparent overflow-hidden   border-gray-300  px-3 py-2 mt-2 w-full rounded mb-3 focus:outline-none focus:border-blue-500 focus:shadow-outline "
+              className="border resize-none bg-transparent overflow-hidden   border-gray-300  px-3 py-2 mt-2 w-full rounded mb-3 focus:outline-none focus:border-lime-900 focus:shadow-outline "
               value={code}
               onChange={(e) => setCode(e.target.value)}
               rows="1"
@@ -111,7 +111,7 @@ const AddCode = () => {
         </div>
 
         <button
-          className="mx-4 py-2 rounded hover:bg-blue-800 bg-blue-700 font-fontfamily5"
+          className="mx-4 py-2 rounded hover:bg-lime-600 bg-lime-500 font-fontfamily5 text-black"
           onClick={handleSaveCode}
         >
           Save CodeSnippet to Stash
