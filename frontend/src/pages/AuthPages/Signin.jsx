@@ -10,7 +10,7 @@ const Signup = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
-  const { signup, error, loading } = useSignup();
+  const { signup, loading } = useSignup();
   const handleSubmit = async (e) => {
     e.preventDefault();
     await signup(email, password, username);
@@ -60,11 +60,11 @@ const Signup = () => {
         >
           Sign up
         </button>
-        {error && (
+        {/* {error && (
           <div className="error border border-red-600 text-center p-3 font-light text-white">
             {error}
           </div>
-        )}
+        )} */}
         {/* </Link> */}
         <p className="font-fontfamily5 mt-3 text-gray-400  text-sm">
           Already have an account?

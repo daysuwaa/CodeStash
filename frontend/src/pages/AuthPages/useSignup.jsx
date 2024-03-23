@@ -1,12 +1,14 @@
 import { useState } from "react";
 import { useAuthContext } from "./useAuthContext";
 import { useSnackbar } from "notistack";
+// import { useNavigate } from "react-router-dom";
 
 export const useSignup = () => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
   const { dispatch } = useAuthContext();
   const { enqueueSnackbar } = useSnackbar();
+  // const navigate = useNavigate();
 
   const signup = async (email, password, username) => {
     // Changed function name to signin
@@ -44,6 +46,10 @@ export const useSignup = () => {
       localStorage.setItem("user", JSON.stringify(user));
       // update auth context with user data
       dispatch({ type: "LOGIN", payload: user });
+      enqueueSnackbar("Signed up successfully, go to login", {
+        variant: "success",
+        autoHideDuration: 4000,
+      });
     } catch (error) {
       setError(error.message);
       enqueueSnackbar("Error Signing in", {
@@ -57,3 +63,25 @@ export const useSignup = () => {
 
   return { signup, error, loading }; // Changed function name to signin
 };
+
+// Check response status and show appropriate snackbar message
+//       if (response.status === 200) {
+//         const data = await response.json();
+//         localStorage.setItem("user", JSON.stringify(data));
+//         dispatch({ type: "LOGIN", payload: data });
+//         enqueueSnackbar("Signed up successfully", {
+//           variant: "success",
+//           autoHideDuration: 2000,
+//         });
+//       }
+//     } catch (error) {
+//       enqueueSnackbar("An error occurred while Signing up", {
+//         variant: "error",
+//         autoHideDuration: 2000,
+//       });
+//     } finally {
+//       setLoading(false);
+//     }
+//   };
+//   return { signup, error, loading };
+// };
