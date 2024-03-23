@@ -159,6 +159,13 @@ const EditCode = () => {
     fetchCode();
   }, [id, user.token]);
 
+  useEffect(() => {
+    if (textAreaRef.current) {
+      textAreaRef.current.style.height = "auto";
+      textAreaRef.current.style.height =
+        textAreaRef.current.scrollHeight + "px";
+    }
+  }, [code]);
   const handleEditCode = () => {
     if (!user) {
       enqueueSnackbar("Please log in to Edit code.", {
@@ -229,7 +236,7 @@ const EditCode = () => {
           <label className="text-[15px] font-fontfamily5 dark:text-gray-300">
             Code :
             <textarea
-              className="border resize-none bg-transparent overflow-hidden border-black dark:border-gray-300 px-3 py-2 mt-2 w-full rounded mb-3 focus:outline-none focus:border-lime-900 focus:shadow-outline "
+              className="border resize-none bg-transparent overflow-hidden border-gray-300 dark:border-gray-300 px-3 py-2 mt-2 w-full rounded mb-3 focus:outline-none focus:border-lime-900 focus:shadow-outline "
               value={code}
               onChange={(e) => setCode(e.target.value)}
               rows="1"
