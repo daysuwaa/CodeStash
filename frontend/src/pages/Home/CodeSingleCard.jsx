@@ -15,7 +15,7 @@ const CodeSingleCard = ({ code }) => {
     <div className="mb-8 md:mb-0 overflow-y-auto">
       <div
         key={code._id}
-        className="border-[0.5px]  md:my-0 shadow-lg text-white dark:text-gray-600 bg-[#101010] dark:bg-white  shadow-slate-600 font-fontfamily5 border-gray-800  rounded-lg px-4 py-3 m-4 relative "
+        className="border-[0.5px] shadow-lg text-white dark:text-gray-600 bg-[#101010] dark:bg-white  shadow-slate-600 font-fontfamily5 border-gray-800  rounded-lg px-4 py-3 m-4 relative "
       >
         <div className="flex justify-start items-center mt-4 gap-x-3">
           <LuStickyNote className="text-lime-500 ml-4  text-2xl" />

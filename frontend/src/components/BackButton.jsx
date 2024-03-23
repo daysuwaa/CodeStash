@@ -8,7 +8,7 @@ const BackButton = ({ destination = "/" }) => {
   return (
     <div>
       <Link to={destination} className=" py-1 rounded-lg w-fit">
-        <IoIosArrowRoundBack className="text-blue-900 text-5xl cursor-pointer hover:text-blue-300" />
+        <IoIosArrowRoundBack className="dark:text-lime-500 text-black text-5xl cursor-pointer dark:hover:text-lime-300" />
       </Link>
     </div>
   );
