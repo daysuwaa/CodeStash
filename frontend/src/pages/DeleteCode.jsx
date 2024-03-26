@@ -61,10 +61,9 @@ const DeleteCode = () => {
           className="py-2 px-5 bg-red-600 hover:bg-red-500 text-white text-sm m-5 rounded"
           onClick={handleDeleteCode}
         >
-          Yes, Delete it
+          {loading ? <Spinner /> : "Yes delete Code"}
         </button>
       </div>
-      <div className="flex justify-center">{loading ? <Spinner /> : ""}</div>
     </div>
   );
 };

@@ -1,12 +1,11 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import Forminput from "./FormInput";
-
+import Spinner from "../../components/Spinner";
 import { useSignup } from "./useSignup";
 import Navbar from "../../components/Navbar";
 
 const Signup = () => {
-  // const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
@@ -54,19 +53,15 @@ const Signup = () => {
           setValue={setPassword}
         />
 
-        <button
-          // type="submit"
-          disabled={loading}
-          className="bg-lime-400 my-4 hover:bg-lime-400 text-black font-fontfamily5 w-full py-2 rounded focus:outline-none focus:shadow-outline"
-        >
-          Sign up
-        </button>
-        {/* {error && (
-          <div className="error border border-red-600 text-center p-3 font-light text-white">
-            {error}
-          </div>
-        )} */}
-        {/* </Link> */}
+        <div className="relative">
+          <button
+            disabled={loading}
+            className="bg-lime-400 hover:bg-lime-600 mt-4 text-black font-fontfamily5 w-full py-2 rounded focus:outline-none focus:shadow-outline"
+          >
+            {loading ? <Spinner /> : "Sign up"}
+          </button>
+        </div>
+
         <p className="font-fontfamily5 mt-3 text-gray-400  text-sm">
           Already have an account?
           <Link to="/login" className="text-lime-400 mx-2 underline">

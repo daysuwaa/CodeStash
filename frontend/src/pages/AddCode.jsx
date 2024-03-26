@@ -76,14 +76,14 @@ const AddCode = () => {
           Add CodeSnippet to Stash
         </h1>
       </div>
-      {loading && <Spinner />}
+      {/* {loading && <Spinner />} */}
       <div className="flex flex-col border-[1px] border-gray-500 rounded w-[350px] md:w-[600px] py-5  mx-auto">
         <div className="grid md:grid-cols-2 mx-4 gap-4 ">
           <label className="text-[15px] font-fontfamily5 text-gray-300 ">
             Label :
             <input
               type="text"
-              className="border border-gray-300 bg-transparent rounded px-3 py-1.5 mt-2 w-full focus:outline-none focus:border-lime-500 focus:shadow-outline"
+              className="border border-gray-300 bg-transparent rounded px-3 py-1.5 mt-2 w-full focus:outline-none  focus:border-lime-900 focus:shadow-outline"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
             />
@@ -92,7 +92,7 @@ const AddCode = () => {
             Programming Language :
             <input
               type="text"
-              className="border border-gray-300 bg-transparent rounded px-3 py-1.5 mt-2 w-full focus:outline-none focus:border-lime-500 focus:shadow-outline "
+              className="border border-gray-300 bg-transparent rounded px-3 py-1.5 mt-2 w-full focus:outline-none  focus:border-lime-900 focus:shadow-outline "
               value={language}
               onChange={(e) => setLanguage(e.target.value)}
             />
@@ -111,12 +111,14 @@ const AddCode = () => {
           </label>
         </div>
 
-        <button
-          className="mx-4 py-2 rounded hover:bg-lime-600 bg-lime-500 font-fontfamily5 text-black"
-          onClick={handleSaveCode}
-        >
-          Save CodeSnippet to Stash
-        </button>
+        <div className="relative mx-4">
+          <button
+            className="py-2 w-full rounded hover:bg-lime-600 bg-lime-500 font-fontfamily5 text-black"
+            onClick={handleSaveCode}
+          >
+            {loading ? <Spinner /> : "  Save CodeSnippet to Stash"}
+          </button>
+        </div>
       </div>
     </div>
   );

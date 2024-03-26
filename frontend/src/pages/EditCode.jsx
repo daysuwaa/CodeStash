@@ -92,7 +92,7 @@ const EditCode = () => {
       <h1 className="text-2xl text-center mx-auto font-fontfamily5">
         Edit CodeSnippet
       </h1>
-      {loading ? <Spinner /> : ""}
+
       <div className="flex flex-col border-[1px] border-gray-500 mt-[5rem] rounded w-[350px] md:w-[600px] py-5 mx-auto">
         <div className="grid md:grid-cols-2 mx-4 gap-4 ">
           <label className="text-[15px] font-fontfamily5 dark:text-gray-300">
@@ -131,7 +131,7 @@ const EditCode = () => {
           className="mx-4 py-2 rounded hover:bg-lime-600 bg-lime-500 font-fontfamily5 text-black"
           onClick={handleEditCode}
         >
-          Edit CodeSnippet
+          {loading ? <Spinner /> : "  Save CodeSnippet to Stash"}
         </button>
       </div>
     </div>

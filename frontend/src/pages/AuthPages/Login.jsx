@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Forminput from "./FormInput";
 import { useLogin } from "./useLogin";
 import Navbar from "../../components/Navbar";
+import Spinner from "../../components/Spinner";
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -49,18 +50,15 @@ const Login = () => {
           setValue={setPassword}
         />
 
-        <button
-          disabled={loading}
-          className="bg-lime-400 hover:bg-lime-600 mt-4 text-black font-fontfamily5 w-full py-2 rounded focus:outline-none focus:shadow-outline"
-        >
-          Log in
-        </button>
-        {/* {error && (
-          <div className="error border border-red-600 text-center p-3 font-light text-white">
-            {error}
-          </div>
-        )} */}
-        {/* </Link> */}
+        <div className="relative">
+          <button
+            disabled={loading}
+            className="bg-lime-400 hover:bg-lime-600 mt-4 text-black font-fontfamily5 w-full py-2 rounded focus:outline-none focus:shadow-outline"
+          >
+            {loading ? <Spinner /> : "Log in"}
+          </button>
+        </div>
+
         <p className="font-fontfamily5 mt-4 dark:text-gray-400  text-sm">
           Dont have an account?
           <Link to="/signup" className="text-lime-500 mx-2 underline">
