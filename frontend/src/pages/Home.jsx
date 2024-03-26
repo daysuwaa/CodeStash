@@ -17,11 +17,14 @@ const Home = () => {
     const fetchCodes = async () => {
       setLoading(true);
       try {
-        const response = await axios.get("http://localhost:5555/codes", {
-          headers: {
-            Authorization: `Bearer ${user.token}`,
-          },
-        });
+        const response = await axios.get(
+          "https://codestashbe.onrender.com/codes",
+          {
+            headers: {
+              Authorization: `Bearer ${user.token}`,
+            },
+          }
+        );
         setCodeList(response.data.data);
         setLoading(false);
       } catch (error) {
