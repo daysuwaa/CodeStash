@@ -5,6 +5,7 @@ import Forminput from "./FormInput";
 import { useLogin } from "./useLogin";
 import Navbar from "../../components/Navbar";
 import Spinner from "../../components/Spinner";
+import Themes from "../../components/Themes";
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -18,6 +19,9 @@ const Login = () => {
   };
   return (
     <div className="m-7">
+      <div className="ml-auto justify-end flex">
+        <Themes />
+      </div>
       <div className="text-center mt-[6rem]">
         <Navbar />
       </div>

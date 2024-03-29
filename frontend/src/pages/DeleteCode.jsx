@@ -55,7 +55,7 @@ const DeleteCode = () => {
         </h1>
       </div>
 
-      <div className="flex flex-col  mt-[10rem] md:mt-[6rem] items-center border  rounded w-[400px] pt-5 mx-auto">
+      <div className="flex flex-col  mt-[10rem] md:mt-[6rem] items-center border border-black dark:border-slate-700 rounded w-[400px] pt-5 mx-auto">
         <h3 className="text-lg">Are you sure you want to delete this code</h3>
         <button
           className="py-2 px-5 bg-red-600 hover:bg-red-500 text-white text-sm m-5 rounded"
