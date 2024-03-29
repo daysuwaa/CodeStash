@@ -4,7 +4,7 @@ import Spinner from "../components/Spinner";
 import BackButton from "../components/BackButton";
 import { useNavigate } from "react-router-dom";
 import { useSnackbar } from "notistack";
-import { useAuthContext } from "../pages/AuthPages/useAuthContext"; // Import the authentication context
+import { useAuthContext } from "./AuthPages/useAuthContext"; // Import the authentication context
 import { baseUrl } from "../../Url";
 
 const AddCode = () => {
